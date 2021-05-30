@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- 
+   This is the code from Part 1 of my video tutorials on learning Knockout JS:
+   https://www.youtube.com/watch?v=XhfPaNTEuTs
+-->
+
+
+    <!-- 
+   This is the code from Part 2 of my video tutorials on learning Knockout JS:
+   https://www.youtube.com/watch?v=dir9iHcUkZI
+-->
+
+    <div id="knockout-app-inventory" class="card">
+        <header>
+            Good Dog Walks Inc.
+        </header>
+        <div class="card-section">
+            <h2>Toy Inventory</h2>
+            <p data-bind="visible:inventory().length === 0">You don't have any toys yet!</p>
+            <p data-bind="visible:inventory().length > 0">These are the assets we have to work with.</p>
+
+            <button data-bind="click: addItem, enable: inventory().length < 4">+ Add Toy</button>
+            <ul class="counter-ui-container" data-bind="foreach: inventory">
+                <li>
+                    <span>
+                        <span data-bind="class: $data.icon"></span>
+                        <span data-bind="text: $data.text"></span>
+                    </span>
+                    <span><button
+                            data-bind="click: $parent.removeItem, attr:{'item-index': $index}">&times;</button></span>
+                </li>
+            </ul>
+        </div>
+        <footer>
+            <span>Have a tail wagging day!</span>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.min.js"
+        integrity="sha512-vs7+jbztHoMto5Yd/yinM4/y2DOkPLt0fATcN+j+G4ANY2z4faIzZIOMkpBmWdcxt+596FemCh9M18NUJTZwvw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,76 @@
+doctype doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        title Document
+        link(rel="stylesheet" href="../styles/style.css")
+    body
+        - const navMenu = { 'display' : 'flex', 'justify-content': 'space-between'}
+        header(style=navMenu)
+            div PUG TEMPLATE ENGINE
+            nav 
+                ul(style=navMenu)
+                    li Home
+                    li About
+                    li Contact Us
+        - const pStyles = {'text-transform': 'uppercase', 'font-weight': 'bold'}
+        p(style=pStyles) This is simple paragraph
+        p.
+            This is also a para 
+            but i want to make it multiline
+            so i put a dot after p tag
+        p.big__para Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, non ullam a vel quisquam maxime quaerat laborum corrupti eos, alias facere velit quia optio possimus iste fugiat dolore accusantium dolorem quam enim pariatur ab error. Saepe reiciendis ullam provident non?
+        p.big__para__multiline.
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur rerum dicta eaque, asperiores at blanditiis numquam praesentium nisi vero explicabo.
+            and 
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, laboriosam mollitia magni tenetur enim sequi provident quia debitis tempore asperiores?
+        h6#custom_id This is header with ID
+        div#my_custom_id this is div with custom id 
+        div.custom_class this div with custom class 
+        #id_custom_div this is also div with id, div is the default elm in pug
+        .cl_custom_div this is also div with class, div is the default elm in pug
+        input(type="password" name="input_password" class="password_input" data-js=`${ 5 > 2 ? 'OK' : 'NOT OK'} `)
+        - const myClasses = ["classA", "classB", "classC"]
+        div.class_original(class=myClasses)
+        - const imgAttributes = { 'src': 'my-pic.jpg', 'alt': 'This is required imgage'}
+        div
+            img&attributes(imgAttributes)
+
+        //- - const companies = [{'name': 'TCS', 'years': 2}, {'name': 'HCL', 'years': 2}, {'name': 'TATA STEEL', 'years': 4}, {'name': 'HONEYWELL', 'years': 1}]
+        - const companies = []
+        h1 This is For/Each loop
+        for c,index in companies
+            p= index + '>' +c['name'] + '-' + c['years']
+        else
+            strong Not started career yet
+        div
+            - const user = {'name': 'John Doe', loggedIn: false, lastLoggedIn: 6}   
+            if user.loggedIn
+                p Welcome back 
+                    strong #{user.name}
+            else if user.lastLoggedIn < 10
+                p Your last visit was #{user.lastLoggedIn} minutes ago!!
+            else
+                a(href='#') Log In
+        
+        h3 SWITCH STATEMENT DEMO
+        //- 1 => pending 3=> completed 2=> in transit
+        - const orderStatus = 3
+        case orderStatus
+            when 1
+                p Your order is placed and will sent shortly!
+            when 2
+                p Your order is on the move - you will receive it soon!
+            when 3
+                p Your ordered item has been deliverd!
+            default
+                p Sorry, we aren't sure what happend with order...
+        
+
+        h3 Include example 
+        include includes/nav
+
+
+//- https://www.youtube.com/watch?v=muZUf0k_bHw&list=PLVvjrrRCBy2JbOPP2JXfCtADABI1QHzWg&index=11

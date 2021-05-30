@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- 
+   This is the code from Part 1 of my video tutorials on learning Knockout JS:
+   https://www.youtube.com/watch?v=XhfPaNTEuTs
+-->
+
+
+    <div id="knockout-app-counter" class="card">
+        <header>
+            Good Dog Walks Inc.
+        </header>
+        <div class="card-section">
+            <h2>Hello, <span data-bind="text: userName"></span></h2>
+            <p>How many walks will we take today?</p>
+            <div class="counter-ui-container">
+                <button data-bind="click: decrease">-</button>
+                <span class="counter" data-bind="text: count">0</span>
+                <button data-bind="click: increase">+</button>
+            </div>
+            <p>
+                Your dog is <span data-bind="text:dogStatus"></span>
+            </p>
+        </div>
+        <footer>
+            <span>Have a tail wagging day!</span>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.5.1/knockout-latest.min.js"
+        integrity="sha512-vs7+jbztHoMto5Yd/yinM4/y2DOkPLt0fATcN+j+G4ANY2z4faIzZIOMkpBmWdcxt+596FemCh9M18NUJTZwvw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
