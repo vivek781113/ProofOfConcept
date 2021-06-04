@@ -1,6 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Form, Input, Button, Checkbox } from "antd";
-// import axios from "axios";
+import { http } from "../../services/http";
+
 const layout = {
   labelCol: {
     span: 8,
@@ -36,11 +37,16 @@ const Login: React.FC = () => {
     console.log("Failed:", errorInfo);
   };
 
-//   const f = async () => {
-//     const res = await fetch("https://reqres.in/api/login");
-//     const json = await res.json();
-//     setUsers(json.data);
-//   };
+  const onLogin = async () => {
+    const loginResponse = await http.post("login", {
+      email: "eve.holt@reqres.in",
+      password: "cityslicka",
+    });
+    console.log(loginResponse);
+  };
+  useEffect(() => {
+    onLogin();
+  }, []);
 
   return (
     <Form
