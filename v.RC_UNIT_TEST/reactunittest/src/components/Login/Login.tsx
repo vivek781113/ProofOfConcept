@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Form, Input, Button, Checkbox } from "antd";
 import { http } from "../../services/http";
 
@@ -18,13 +18,13 @@ const tailLayout = {
 };
 
 interface LoginVM {
-  userName: string;
+  email: string;
   password: string;
 }
 
 const Login: React.FC = () => {
   const defaultLoginVM: LoginVM = {
-    userName: "",
+    email: "",
     password: "",
   };
   const [loginVm, setLoginVm] = useState<LoginVM>(defaultLoginVM);
@@ -44,14 +44,14 @@ const Login: React.FC = () => {
     });
     console.log(loginResponse);
   };
-  useEffect(() => {
-    onLogin();
-  }, []);
+  // useEffect(() => {
+  //   onLogin();
+  // }, []);
 
   return (
     <Form
       {...layout}
-      name="basic"
+      name="loginform"
       initialValues={{
         remember: true,
       }}
@@ -59,18 +59,18 @@ const Login: React.FC = () => {
       onFinishFailed={onFinishFailed}
     >
       <Form.Item
-        label="Username"
-        name="username"
+        label="Email"
+        name="email"
         rules={[
           {
             required: true,
-            message: "Please input your username!",
+            message: "Please input your email!",
           },
         ]}
       >
         <Input
-          value={loginVm.userName}
-          onChange={(e) => setLoginVm({ ...loginVm, userName: e.target.value })}
+          value={loginVm.email}
+          onChange={(e) => setLoginVm({ ...loginVm, email: e.target.value })}
         />
       </Form.Item>
 
@@ -102,7 +102,7 @@ const Login: React.FC = () => {
           type="primary"
           htmlType="submit"
           onClick={() => {
-            console.log(loginVm);
+            onLogin();
           }}
         >
           Submit
