@@ -23,7 +23,7 @@ function App() {
   return (
     <Layout style={{ height: "100vh" }}>
       <Sider trigger={null} collapsible collapsed={collapsed}>
-        <div className="logo" />
+        <div className="logo">RTK</div>
         <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
           <Menu.Item key="1" icon={<UserOutlined />}>
             nav 1
@@ -51,15 +51,13 @@ function App() {
             minHeight: 280,
           }}
         >
-          Content
-            </Content>
+          <Card title="Login" bordered={true} style={{ width: 500, marginLeft: '50px' }}>
+            <Login />
+          </Card>
+        </Content>
       </Layout>
     </Layout>
   );
 }
 
 export default App;
-
-{/* <Card title="Login" bordered={true} style={{ width: 300 }}>
-    <Login />
-  </Card> */}
