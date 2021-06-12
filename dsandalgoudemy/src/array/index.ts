@@ -1,5 +1,5 @@
 //LOOKUP/ACCESS O(1)
-//PUSH O(1)
+//PUSH O(N)
 //INSERT O(N)
 //DELETE O(N)
 
