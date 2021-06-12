@@ -1,4 +1,5 @@
-import * as _ from 'lodash';
+import _ from 'lodash';
+import { reverseString, reversStringOneLiner } from './array';
 import { MyArray } from './array/myArray';
 import './style.css'
 
@@ -14,7 +15,11 @@ const main = () => {
 
   console.log(`---In Main Method -----`);
 
-  myArrayImplementaionTest();
+  // myArrayImplementaionTest();
+  console.log(reverseString('string'));
+  console.log(reverseString('priya'));
+  console.log(reversStringOneLiner('vivek'));
+  console.log(reversStringOneLiner('tiwary'));
 
 };
 
