@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { reverseString, reversStringOneLiner } from './array';
+import { mergeTwoSortedArray, reverseString, reversStringOneLiner } from './array';
 import { MyArray } from './array/myArray';
 import './style.css'
 
@@ -20,6 +20,11 @@ const main = () => {
   console.log(reverseString('priya'));
   console.log(reversStringOneLiner('vivek'));
   console.log(reversStringOneLiner('tiwary'));
+
+  console.log(mergeTwoSortedArray([1, 3], [2, 4]));
+  console.log(mergeTwoSortedArray([1, 3, 5], [2, 4, 6]));
+  console.log(mergeTwoSortedArray([1, 2, 5], [3, 4]));
+  console.log(mergeTwoSortedArray([1, 2, 5], [3, 4, 8, 10]));
 
 };
 
