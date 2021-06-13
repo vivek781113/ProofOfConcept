@@ -63,9 +63,5 @@ export class BinarySearchTree {
                 }
             }
         }
-
-
-
-        return false;
     }
 }
