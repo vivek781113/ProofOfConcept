@@ -1,8 +1,3 @@
-//LOOKUP/ACCESS O(1)
-//PUSH O(N)
-//INSERT O(N)
-//DELETE O(N)
-
 import * as _ from 'lodash';
 
 
@@ -36,7 +31,7 @@ const mergeTwoSortedArray = (firstArray: Array<any>, secondArray: Array<any>): A
     const auxArray = new Array<any>(m + n);
 
     if (m === 0 && n === 0)
-        return auxArray;
+        return [];
     if (m === 0)
         return secondArray;
     if (n === 0)
@@ -80,4 +75,9 @@ const mergeTwoSortedArrayV2 = (firstArray: Array<any>, secondArray: Array<any>):
     _.sortBy([...firstArray, ...secondArray], (o) => o);
 
 
-export { reverseString, reversStringOneLiner, mergeTwoSortedArray, mergeTwoSortedArrayV2 };
+export {
+    reverseString,
+    reversStringOneLiner,
+    mergeTwoSortedArray,
+    mergeTwoSortedArrayV2
+};

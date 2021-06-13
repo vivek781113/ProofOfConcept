@@ -1,3 +1,8 @@
+//LOOKUP/ACCESS O(1)
+//PUSH O(N)
+//INSERT O(N)
+//DELETE O(N)
+
 export class MyArray {
     length: number;
     data: any;
