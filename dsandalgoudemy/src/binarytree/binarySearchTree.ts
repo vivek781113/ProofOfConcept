@@ -2,9 +2,6 @@
 //INSERT O(LOGN)
 //DELETE O(LOGN)
 
-import { min } from "lodash";
-
-
 class TreeNode {
     left: TreeNode | null;
     right: TreeNode | null;
@@ -71,9 +68,10 @@ export class BinarySearchTree {
         if (!this.root)
             return false;
 
+        let currentNode: TreeNode | null = this.root;
+        let tempParentNode: TreeNode | null = null;
+
         while (true) {
-            let currentNode: TreeNode | null = this.root;
-            let tempParentNode: TreeNode | null = null;
             if (data < currentNode?.data && currentNode?.left) {
                 tempParentNode = currentNode;
                 currentNode = currentNode.left;
@@ -121,7 +119,10 @@ export class BinarySearchTree {
                         tempParentNode!.right = currentNode.left;
 
                     }
-                } else {
+                }
+                //case 
+                //if bothe left and right node exist
+                else {
                     let successorNodeData = this.getMinimumData(currentNode);
                     this.delete(successorNodeData);
                     currentNode.data = successorNodeData;
