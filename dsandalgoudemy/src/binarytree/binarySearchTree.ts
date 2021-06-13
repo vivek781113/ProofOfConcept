@@ -44,4 +44,28 @@ export class BinarySearchTree {
 
         }
     }
+    lookup = (data: any): boolean => {
+        if (!this.root)
+            return false;
+        let tempNode = this.root;
+        while (true) {
+            if (tempNode.data === data)
+                return true;
+            else {
+                if (data <= tempNode.data && tempNode.left) {
+                    tempNode = tempNode.left;
+                } else if (data <= tempNode.data && !tempNode.left) {
+                    return false;
+                } else if (data > tempNode.data && tempNode.right) {
+                    tempNode = tempNode.right;
+                } else {
+                    return false;
+                }
+            }
+        }
+
+
+
+        return false;
+    }
 }

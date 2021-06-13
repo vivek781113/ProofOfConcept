@@ -1,5 +1,10 @@
 import _ from 'lodash';
-import { mergeTwoSortedArray, mergeTwoSortedArrayV2, reverseString, reversStringOneLiner } from './array';
+import {
+  mergeTwoSortedArray,
+  mergeTwoSortedArrayV2,
+  reverseString,
+  reversStringOneLiner
+} from './array';
 import { MyArray } from './array/myArray';
 import { BinarySearchTree } from './binarytree/binarySearchTree';
 import './style.css'
@@ -16,24 +21,28 @@ const main = () => {
 
   console.log(`---In Main Method -----`);
 
-  // myArrayImplementaionTest();
-  // console.log(reverseString('string'));
-  // console.log(reverseString('priya'));
-  // console.log(reversStringOneLiner('vivek'));
-  // console.log(reversStringOneLiner('tiwary'));
-
-  // console.log(mergeTwoSortedArray([1, 3], [2, 4]));
-  // console.log(mergeTwoSortedArray([1, 3, 5], [2, 4, 6]));
-  // console.log(mergeTwoSortedArray([10, 17, 99], [18, 55]));
-  // console.log(mergeTwoSortedArrayV2([10, 17, 99], [18, 55]));
-  // console.log(mergeTwoSortedArray([1, 2, 5], [3, 4, 8, 10]));
-  // console.log(mergeTwoSortedArrayV2([1, 2, 5], [3, 4, 8, 10]));
-
+  myArrayImplementaionTest();
+  console.log(reverseString('string'));
+  console.log(reverseString('priya'));
+  console.log(reversStringOneLiner('vivek'));
+  console.log(reversStringOneLiner('tiwary'));
+  console.clear();
+  console.log(mergeTwoSortedArray([1, 3], [2, 4]));
+  console.log(mergeTwoSortedArray([1, 3, 5], [2, 4, 6]));
+  console.log(mergeTwoSortedArray([10, 17, 99], [18, 55]));
+  console.log(mergeTwoSortedArrayV2([10, 17, 99], [18, 55]));
+  console.log(mergeTwoSortedArray([1, 2, 5], [3, 4, 8, 10]));
+  console.log(mergeTwoSortedArrayV2([1, 2, 5], [3, 4, 8, 10]));
+  console.clear();
   const bst = new BinarySearchTree();
   bst.insert(9);
   bst.insert(4);
   bst.insert(10);
   bst.insert(15);
+  console.log(bst.root);
+
+  console.log(bst.lookup(2100));
+
 
 };
 
