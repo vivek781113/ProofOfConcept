@@ -76,5 +76,8 @@ const mergeTwoSortedArray = (firstArray: Array<any>, secondArray: Array<any>): A
 };
 
 
+const mergeTwoSortedArrayV2 = (firstArray: Array<any>, secondArray: Array<any>): Array<any> =>
+    _.sortBy([...firstArray, ...secondArray], (o) => o);
 
-export { reverseString, reversStringOneLiner, mergeTwoSortedArray };
+
+export { reverseString, reversStringOneLiner, mergeTwoSortedArray, mergeTwoSortedArrayV2 };
