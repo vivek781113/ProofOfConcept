@@ -1,7 +1,29 @@
+
+//#region  Conceptual notes
 //LOOKUP/ACCESS O(LOGN)
 //INSERT O(LOGN)
 //DELETE O(LOGN)
 
+// A Tree having N node will have N-1 EDGE (one for each except the root node)
+
+// Depth: depth of node x = length of path from root to x or no of edges from path to x
+// depth of root node = 0
+
+// Height: Number of edges in longest path from x to leaf
+// height of leaf node = 0
+
+// Height of tree: Height of root node
+
+// A binary tee where each node can maximum two node
+// Applications storing natually hierarchical data (file system), organize data for quick search insertion/deletion (BST), Trie(dictionary), Network routing algorithm
+
+// Maximum number of nodes n in binary tree with height h = 2^0 + 2^1 + 2^2 + ....+ 2^h = 2^(h+1) -1
+// => n = 2^(h+1) -1
+
+// Height of empty tree = -1
+// Height of tree with only root node = 0
+
+//#endregion
 class TreeNode {
     left: TreeNode | null;
     right: TreeNode | null;
@@ -132,7 +154,6 @@ export class BinarySearchTree {
         }
 
     }
-
     getMinimumData = (node: TreeNode): any => {
         while (true) {
             if (node.left) {

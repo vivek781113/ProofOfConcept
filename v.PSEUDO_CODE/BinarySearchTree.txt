@@ -1,0 +1,15 @@
+pseudo code binary search tree
+
+//class definition
+
+
+
+//insert
+
+
+
+//lookup
+
+
+
+//delete
