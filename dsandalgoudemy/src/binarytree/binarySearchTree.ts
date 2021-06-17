@@ -145,7 +145,7 @@ export class BinarySearchTree {
                 //case 
                 //if bothe left and right node exist
                 else {
-                    let successorNodeData = this.getMinimumData(currentNode);
+                    let successorNodeData = this.findMinimumData(currentNode);
                     this.delete(successorNodeData);
                     currentNode.data = successorNodeData;
                 }
@@ -154,15 +154,57 @@ export class BinarySearchTree {
         }
 
     }
-    getMinimumData = (node: TreeNode): any => {
+    findMinimumData = (node: TreeNode): any => {
         while (true) {
             if (node.left) {
                 node = node.left;
             }
             else {
+                return node?.data;
+            }
+        }
+    }
+    findMaximumData = (node: TreeNode): any => {
+        if (node) {
+            if (node.right) {
+                this.findMaximumData(node.right);
+            } else {
                 return node.data;
             }
         }
+        else {
+            return -1;
+        }
+    }
+    findHeight = (node: TreeNode): any => {
+        let leftHeight: number = 0;
+        let rightHeight: number = 0;
+        let tempLeftNode: null | TreeNode = node;
+        let tempRightNode: null | TreeNode = node;
+        while (tempLeftNode || tempRightNode) {
+
+            if (tempLeftNode?.left) {
+                tempLeftNode = tempLeftNode.left;
+                leftHeight++;
+            } else if (tempLeftNode?.right) {
+                tempLeftNode = tempLeftNode.right;
+                leftHeight++;
+            }
+            else if (!tempLeftNode?.left && !tempLeftNode?.right) {
+                tempLeftNode = null;
+            }
+            if (tempRightNode?.right) {
+                tempRightNode = tempRightNode.right;
+                rightHeight++;
+            } else if (tempRightNode?.left) {
+                tempRightNode = tempRightNode.left;
+                rightHeight++;
+            } else if (!tempRightNode?.right && !tempRightNode?.left) {
+                tempRightNode = null;
+            }
+        }
+        return Math.max(leftHeight, rightHeight);
+
     }
 
 }
