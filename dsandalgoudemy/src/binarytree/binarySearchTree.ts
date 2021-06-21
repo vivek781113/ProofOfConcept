@@ -206,5 +206,24 @@ export class BinarySearchTree {
         return Math.max(leftHeight, rightHeight);
 
     }
+    levelOrderTraversal = (node: TreeNode) => {
+        const result: any = [];
+        if (!node)
+            return result;
+        const nodeQueue = [];
+        nodeQueue.push(node);
+        while (nodeQueue.length) {
+            let peek: TreeNode = nodeQueue[0];
+            if (peek.left) {
+                nodeQueue.push(peek.left);
+            }
+            if (peek.right) {
+                nodeQueue.push(peek.right);
+            }
+            result.push(peek.data);
+            nodeQueue.shift();
+        }
+        return result;
+    }
 
 }

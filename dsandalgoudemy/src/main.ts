@@ -35,17 +35,23 @@ const main = () => {
   console.log(mergeTwoSortedArrayV2([1, 2, 5], [3, 4, 8, 10]));
   console.clear();
   const bst = new BinarySearchTree();
+  //8 10 14 13 3 6 1 4 7
+  bst.insert(8);
+  bst.insert(10);
+  bst.insert(14);
+  bst.insert(13);
   bst.insert(3);
+  bst.insert(6);
   bst.insert(1);
-  bst.insert(7);
-  bst.insert(5);
   bst.insert(4);
+  bst.insert(7);
   console.log(JSON.stringify(bst.root));
   // bst.delete(2);
   // console.log(JSON.stringify(bst.root));
   // bst.delete(14);
   // console.log(JSON.stringify(bst.root));
   console.log(bst.findHeight(bst.root!));
+  console.log(bst.levelOrderTraversal(bst.root!));
 
 };
 
