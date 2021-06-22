@@ -226,4 +226,44 @@ export class BinarySearchTree {
         return result;
     }
 
+    /**
+     * Time complexity: O(n)
+     * Space Complexity: O(h) => height of tree
+     *              worst: O(n)
+     *              Best/Avg: O(logn)
+     * @param node 
+     * @returns 
+     */
+    preOrderTraversal = (node: TreeNode): void => {
+        if (!node)
+            return;
+        console.log(this.root?.data);
+        if (node.left)
+            this.preOrderTraversal(node.left);
+        if (node.right)
+            this.preOrderTraversal(node.right);
+    }
+    inOrderTraversal = (node: TreeNode): void => {
+        if (!node)
+            return;
+        if (node.left)
+            this.inOrderTraversal(node.left);
+
+        console.log(this.root?.data);
+
+        if (node.right)
+            this.inOrderTraversal(node.right);
+    }
+    postOrderTraversal = (node: TreeNode): void => {
+        if (!node)
+            return;
+        if (node.left)
+            this.postOrderTraversal(node.left);
+
+        if (node.right)
+            this.postOrderTraversal(node.right);
+
+        console.log(this.root?.data);
+    }
+
 }
